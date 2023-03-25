@@ -32,6 +32,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     @Lazy
     private AuthenticationManager authenticationManager;
+    
     public ApiResponse register(RegisterDTO dto) {
         userValidator.validatorOnRegister(dto);
         User createdUser = UserMapper.toEntityFromRegisterDTO(dto);
