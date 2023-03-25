@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+<div class="container">
+    <div class="card-header bg-primary text-white">
+        <h3>REGISTER PAGE</h3>
+    </div>
+    <div class="card-body">
+        <form th:action="@{/api/auth/register}" method="POST">
+        <div class="row">
+            <div class="col-2">
+                <label for="fullName">FullName</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="fullName" name="fullName" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label for="username">Username</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="username" name="username" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+
+                <label for="password">Password</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="password" name="password" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+
+                <label for="email">Email</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="email" name="email" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label>Verify</label>
+            </div>
+            <div class="col-4">
+                <div class="g-recaptcha"
+                     data-sitekey="6LeYNvkkAAAAACJFWVvn5fvAE8E9sBjVcLRyQuhf">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success"> Save</button>
+        </form>
+        <br/>
+    </div>
+</div>
+</body>
+</html>

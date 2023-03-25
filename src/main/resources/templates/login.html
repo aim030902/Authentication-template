@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="card-header bg-primary text-white">
+        <h3>LOGIN PAGE</h3>
+    </div>
+    <div>
+        <h4><a th:href="@{/oauth2/authorization/google}">Login with Google</a></h4>
+        <h4><a th:href="@{/oauth2/authorization/github}">Login with GitHub</a></h4>
+        <h4><a th:href="@{/oauth2/authorization/facebook}">Login with Facebook</a></h4>
+    </div>
+    <div><p>OR</p></div>
+
+    <div class="card-body">
+        <form th:action="@{/api/auth/login}" method="POST">
+
+        <div class="row">
+            <div class="col-2">
+                <label for="username">Username</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="username" name="username" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+
+                <label for="password">Password</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="password" name="password" class="form-control"/>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success"> Login </button>
+        </form>
+        <br/>
+    </div>
+</div>
+</body>
+</html>
