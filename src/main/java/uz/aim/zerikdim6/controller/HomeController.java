@@ -13,10 +13,6 @@ import java.util.List;
 public class HomeController {
     @Autowired
     private UserRepository userRepository;
-    @GetMapping("/")
-    public String homePage() {
-        return "index";
-    }
 
     @GetMapping("/dashboard")
     public String dashboard(Model model) {
